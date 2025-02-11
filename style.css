@@ -1,0 +1,98 @@
+/* style.css */
+
+/* Basic reset-ish */
+* {
+    margin: 0; 
+    padding: 0;
+    cursor: url("cursor_resized.jpg") 10 10, auto !important;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #111;
+    color: #eee;
+    font-family: "Courier New", monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin-bottom: 250px;
+  }
+  
+  /* main container + final score */
+  .container {
+    width: 600px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* so old text can fade out */
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  /* each step of the story */
+  .story-line {
+    margin: 20px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  /* fading out */
+  .fading {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  /* fade in */
+  .entering {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* button */
+  .choice-btn {
+    display: inline-block;
+    margin: 10px 5px 0 5px;
+    padding: 10px 16px;
+    border: none;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .choice-btn:hover {
+    background: #666;
+  }
+  
+  /* final score */
+  #scoreBox {
+    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffbb00;
+    display: none;
+    line-height: 1.5;
+  }
+  
+  #scoreBox p {
+    margin: 10px 0;
+  }
+  
+  a {
+    color: #ffbb00;
+    text-decoration: underline;
+  }
+  

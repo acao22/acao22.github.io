@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lion Dancing - Cultural Heritage and Tradition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Lion Dancing</h1>
+    <p>A Traditional Chinese Art Form Celebrating Culture</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#history">History</a>
+    <a href="#performances">Performances</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>What is Lion Dancing?</h2>
+    <p>Lion Dance is a traditional Chinese performance that involves a dancer or a team of dancers performing inside a lion costume. This energetic and colorful art form is often performed during festivals, celebrations, and other cultural events.</p>
+</section>
+
+<section id="history">
+    <h2>History of Lion Dancing</h2>
+    <p>Lion dancing has been part of Chinese culture for over a thousand years. It is believed to have originated during the Tang Dynasty and was used to ward off evil spirits and bring good luck.</p>
+</section>
+
+<section id="performances">
+    <h2>Lion Dance Performances</h2>
+    <p>Lion dances are performed at various events such as Chinese New Year celebrations, weddings, business openings, and more. The dance is often accompanied by traditional music played with drums, cymbals, and gongs.</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Lion Dancing Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
