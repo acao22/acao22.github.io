@@ -85,6 +85,7 @@ function loadStep(stepId) {
 
         // update score
         energyScore += (choice.scoreChange || 0);
+        console.log("Score:", energyScore);
 
         // update time if there's a minuteChange
         if (typeof choice.minuteChange === "number") {
@@ -146,8 +147,16 @@ function endGame() {
   // show final score
   scoreBox.style.display = "block";
   scoreBox.innerHTML = `
-    <p>Your Score: <span>${energyScore}</span></p>
-    <p>The lower the score, the better!</p>
+    <p>Your Score: <span>${score}</span></p>
+      <p>The lower the score, the better!<br>
+      The US wastes over 60% of its energy, etc...<br>
+      In our everyday life, it is good to be mindful of how we use energy!</p>
+      <p>
+        Learn More: 
+        <a href="https://habitsofwaste.org/call-to-action/energy/" target="_blank">
+          habits of waste (energy)
+        </a>
+      </p>
   `;
 
   window.scrollTo({

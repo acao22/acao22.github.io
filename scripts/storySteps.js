@@ -1,8 +1,8 @@
 // lose scenario
 const loseStep = {
     id: 999,
-    text: "You’re late and Grey fails you. You lose!!!<br><br>",
-    autoNext: "end" // triggers the end screen
+    text: "You're late and an evil monster awaits you. You lose!!!<br><br>",
+    autoNext: "end"
   };
   
 // story steps
@@ -85,9 +85,9 @@ const loseStep = {
         Turn off the lamp?
       `,
       choices: [
-        // Yes => save energy (scoreChange=0) => next=3
+        // yes => save energy (scoreChange=0) => next=3
         { label: "Yes (+1 minute)", scoreChange: 0, minuteChange: 1, nextId: 10 },
-        // No => waste energy (scoreChange=1) => next=4
+        // no => waste energy (scoreChange=1) => next=4
         { label: "No (0 minutes)", scoreChange: 1, minuteChange: 0, nextId: 11 }
       ]
     },
@@ -204,7 +204,6 @@ const loseStep = {
         { label: "Uber (2 mins)", scoreChange: 2, nextId: 28 },
       ]
     },
-    // The lose step (id=999) is appended after the array (see loseStep).
     {
       id: 26,
       text: `
@@ -418,7 +417,7 @@ const loseStep = {
     },
     {
       id: 48,
-      text: "lol no, you don’t have a choice. you must get your coffee.",
+      text: "You don’t have a choice, you must get your coffee.",
       autoNext: 49
     },
     {
@@ -448,8 +447,8 @@ const loseStep = {
       id: 51,
       text: `
         hmmm, interesting choice.<br>
-        wow, those tumblrs they're selling are pretty cute. 
-        The barista says they can make your drink in the tumblr for you. Buy it?
+        wow, those reusable cups they're selling are pretty cute. 
+        The barista says they can make your drink in the reusable cups for you. Buy it for $20?
       `,
       choices: [
         { label: "Yes", scoreChange: 0, nextId: 52 },
@@ -486,11 +485,10 @@ const loseStep = {
       id: 55,
       text: `
         Which GSR looks the most inviting?<br>
-        [G101.1] [G101.3] [G101.8] [G101.10]
       `,
       choices: [
         { label: "G101.1", scoreChange: 0, nextId: 56 },
-        { label: "G101.3", scoreChange: 0, nextId: 56},
+        { label: "G101.3", scoreChange: 0, nextId: 999},
         { label: "G101.8", scoreChange: 0, nextId: 56 },
         { label: "G101.10", scoreChange: 0, nextId: 56}
       ]
@@ -529,7 +527,6 @@ const loseStep = {
     {
       id: 60,
       text: `
-        (If you didn't buy the tumblr, you have a disposable cup.)<br>
         Hey look, you finished your coffee. Throw it away?
       `,
       choices: [
@@ -540,12 +537,18 @@ const loseStep = {
     {
       id: 61,
       text: `
-        Okay, time to actually lock in now.<br>
-        [lock in]
+        Okay, time to actually lock in now.
       `,
       choices: [
-        { label: "lock in", scoreChange: 0, nextId: 62 },
+        { label: "lock in", scoreChange: 0, nextId: 805 },
       ]
+    },
+    {
+      id: 805,
+      text: `
+        You're locked in!!! Van Pelt really has that effect on you.
+      `,
+      autoNext: 62
     },
     {
       id: 62,
@@ -608,16 +611,23 @@ const loseStep = {
     {
       id: 69,
       text: `
-        You’re starving because you’re a big back. Where to go for dinner?
+        You've made your way to the button, and you’re starving because you’re a big back. Where to go for dinner?
       `,
       choices: [
-        { label: "Commons", scoreChange: 0, nextId: 70 },
-        { label: "Hill", scoreChange: 0, nextId: 70 },
-        { label: "Mclelland", scoreChange: 0, nextId: 70 },
-        { label: "Lauder", scoreChange: 0, nextId: 70 },
-        { label: "Quaker Kitchen", scoreChange: 0, nextId: 70 },
-        { label: "Hillel", scoreChange: 0, nextId: 70 },
+        { label: "Commons", scoreChange: 0, nextId: 804 },
+        { label: "Hill", scoreChange: 0, nextId: 804 },
+        { label: "Mclelland", scoreChange: 0, nextId: 804 },
+        { label: "Lauder", scoreChange: 0, nextId: 804 },
+        { label: "Quaker Kitchen", scoreChange: 0, nextId: 804 },
+        { label: "Hillel", scoreChange: 0, nextId: 804 },
       ]
+    },
+    {
+      id: 804,
+      text: `
+        That's my favorite dining hall. The menu is insane today! You sit down to munch.
+      `,
+      autoNext: 70
     },
     {
       id: 70,
@@ -658,7 +668,7 @@ const loseStep = {
     {
       id: 75,
       text: `
-        It seems like you’ve accumulated a lot of trash. Water bottles, etc."
+        It seems like you’ve accumulated a lot of trash. Water bottles, etc.
       `,
       autoNext: 76
     },
@@ -820,5 +830,4 @@ const loseStep = {
     }
   ];
 
-  // Add the loseStep at the end
 storySteps.push(loseStep);

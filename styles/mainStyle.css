@@ -1,6 +1,5 @@
-/* style.css */
+  /* mainStyle.css: stylesheet page for index.html */
 
-/* Basic reset-ish */
 * {
     margin: 0; 
     padding: 0;
@@ -25,7 +24,7 @@
     max-width: 90%;
     text-align: center;
     position: relative;
-    overflow: hidden; /* so old text can fade out */
+    overflow: hidden; 
     padding: 20px;
     margin-bottom: 50px;
   }
@@ -39,13 +38,12 @@
     transition: opacity 1s ease, transform 1s ease;
   }
   
-  /* fading out */
+  /* fading stuff */
   .fading {
     opacity: 0;
     transform: translateY(-20px);
   }
-  
-  /* fade in */
+
   .entering {
     opacity: 0;
     transform: translateY(20px);
@@ -96,3 +94,42 @@
     text-decoration: underline;
   }
   
+  /* cornor icon link on the right */
+#cornerIcon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+#cornerIcon:hover {
+  opacity: 1;
+}
+
+#cornerIcon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+  /* left corner icon */
+#cornerIcon2 {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+#cornerIcon2:hover {
+  opacity: 1;
+}
+
+#cornerIcon2 img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
