@@ -109,9 +109,6 @@ function loadStep(stepId) {
   // CASE 2: No choices => maybe autoNext
   else {
     if (step.autoNext === "end") {
-      // Show a small note so user knows to click anywhere
-      newLine.innerHTML += `<p style="color:#bbb; font-size:0.9rem;">
-        <em>(click anywhere to see final score)</em></p>`;
       enableClickAnywhere("end");
     }
     else if (typeof step.autoNext === "number") {
