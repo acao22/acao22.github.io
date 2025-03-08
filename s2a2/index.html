@@ -3,226 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>digicloset</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('./images/windows-background2.png') center center;
-      background-size: contain; 
-      font-family: Tahoma, sans-serif; 
-    }
-
-    .desktop {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 20px;
-    }
-
-    .window {
-      width: 800px;
-      background-color: #efefef;
-      border: 2px solid #999;
-      box-shadow: 3px 3px 0 #777; 
-    }
-
-    /* title */
-    .title-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(to bottom, #0078d7, #005a9e);
-      color: #fff;
-      padding: 4px 8px;
-    }
-    .title-bar-text {
-      font-weight: bold;
-    }
-    .title-bar-controls {
-      display: flex;
-      gap: 4px;
-    }
-    .title-bar-controls button {
-      width: 16px;
-      height: 16px;
-      background-color: #eee;
-      border: 1px solid #444;
-      cursor: pointer;
-      padding: 0;
-      font-size: 10px;
-      line-height: 14px;
-      font-weight: bold;
-      color: #444;
-      text-align: center;
-    }
-    .title-bar-controls button:hover {
-      background-color: #ddd;
-    }
-
-    /* window body */
-    .window-body {
-      padding: 15px;
-      background: url('./images/windows-background.png') center center;
-      background-size: cover;
-    }
-
-    h1 {
-      margin-top: 15px;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    /* outfits */
-    .outfit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .outfit-item {
-      background-color: #fff;
-      padding: 4px;
-      border: 2px solid #888;
-      box-shadow: inset 0 0 0 2px #999;
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-      position: relative; 
-    }
-
-    .outfit-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
-
-    .outfit-item:hover img {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); 
-    }
-
-    /* modal styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      display: none; 
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
-
-    .modal {
-      background-color: #fff;
-      padding: 20px;
-      border: 2px solid #999;
-      box-shadow: 3px 3px 0 #777;
-      max-width: 600px;
-      width: 90%;
-      position: relative;
-    }
-
-    .modal img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .modal .close-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background-color: #ccc;
-      border: 1px solid #777;
-      cursor: pointer;
-      padding: 2px 6px;
-      font-size: 14px;
-      font-weight: bold;
-      line-height: 14px;
-      color: #333;
-    }
-    .modal .close-btn:hover {
-      background-color: #bbb;
-    }
-
-    .modal-header {
-      font-size: 18px;
-      text-align: center;
-    }
-
-    /* windows music player */
-    .music-player {
-      background-color: #ccc;
-      border: 2px solid #999;
-      margin-top: 10px;
-      box-shadow: inset 0 0 0 2px #bbb;
-      padding: 5px;
-    }
-    .music-player-title {
-      display: inline-block;
-      background-color: #0078d7;
-      color: #fff;
-      padding: 2px 6px;
-      margin-bottom: 5px;
-      font-weight: bold;
-      border: 1px solid #444;
-    }
-    .music-player-trackname {
-      margin-top: 3px;
-      font-size: 14px;
-      color: #222;
-    }
-
-    /* ==========================
-       ADDED: Music Notes
-       (unchanged from previous)
-       ========================== */
-    .notes-container {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 5px;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    .notes-container.show-notes {
-      visibility: visible;
-    }
-    .music-note {
-      font-size: 24px;
-      color: #e71d73;
-      opacity: 0;
-      animation: floatNote 2s infinite;
-    }
-    .music-note:nth-child(1) {
-      animation-delay: 0s;
-    }
-    .music-note:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-    .music-note:nth-child(3) {
-      animation-delay: 0.8s;
-    }
-
-    @keyframes floatNote {
-      0%   { transform: translateY(0);   opacity: 1; }
-      70%  { opacity: 1; }
-      100% { transform: translateY(-30px); opacity: 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="./mainStyle.css">
 </head>
-
 <body>
   <div class="desktop">
     <!-- main window -->
+    
     <div class="window">
       <div class="title-bar">
         <div class="title-bar-text">Choose an Outfit!</div>
@@ -234,24 +20,49 @@
       </div>
       <div class="window-body">
         <h1>pick your outfit for the day:</h1>
+
+        <!-- toggle music.. 1mb limit :( -->
+        <div class="toggle-music-container">
+          <button class="toggle-music" id="toggleMusicBtn">Toggle Music: OFF</button>
+          <div class="warning-text">WARNING: ON will increase the website size to over 1MB! choose wisely...</div>
+        </div>
+
         <div class="outfit-grid">
           <div class="outfit-item" data-larger="images/catmeme1.png">
-            <img src="./images/outfit1.png" alt="Outfit 1">
+            <img src="./images/outfit1.png" alt="laid back grey hoodie, lace pink cami. 
+            dark grey cargos, platform uggs, pink and silver airpod maxes. perfect for a casual cute trip out!">
           </div>
           <div class="outfit-item" data-larger="images/catmeme2.png">
-            <img src="./images/outfit2.png" alt="Outfit 2">
+            <img src="./images/outfit2.png" alt="shirred brownn lace top with ribbon. 
+            long flowy white skirt. cowboy-esque belt, paired with brown many-jane 
+            type ballet flats, a thin white flowy cardigan. a sheer patterend dark brown neckscarf, 
+            canvas small tote, gold jewelry. an outfit meant for the sun :>">
           </div>
           <div class="outfit-item" data-larger="images/catmeme3.png">
-            <img src="./images/outfit3.png" alt="Outfit 3">
+            <img src="./images/outfit3.png" alt="white and black striped collared 
+            shirt over oversized dark blue wash baggy jeans. new balance 550s 
+            and black ribbon backpack you can tie many different ways. 
+            a versatile outfit for a versatile person.">
           </div>
           <div class="outfit-item" data-larger="images/catmeme4.png">
-            <img src="./images/outfit4.png" alt="Outfit 4">
+            <img src="./images/outfit4.png" alt="white crop button up 
+            cardigan layered over navy cami. denim fade wash a-line 
+            skirt over black and white contrast sneakers, black soft 
+            bag, topped with black bomber crop jacket and wired 
+            headphones. for the acubi fashion lovers!">
           </div>
           <div class="outfit-item" data-larger="images/catmeme5.png">
-            <img src="./images/outfit5.png" alt="Outfit 5">
+            <img src="./images/outfit5.png" alt="chunky wool light blue 
+            scarf over beige lace long sleeve with blue rose pattern 
+            detailing in the center. gray fleece frill miniskirt with 
+            knee-high black buckle boots and a small leather black bag.
+            feminine and warm!">
           </div>
           <div class="outfit-item" data-larger="images/catmeme6.png">
-            <img src="./images/outfit6.png" alt="Outfit 6">
+            <img src="./images/outfit6.png" alt="a bold red cardigan over
+             white rose-patterned mini dress with black lace and bow 
+             detailing. thick black platform boots with white lace socks 
+             and black heart bag with red detailing. a statement!">
           </div>
         </div>
       </div>
@@ -263,56 +74,76 @@
     <div class="modal" id="modal">
       <button class="close-btn" id="closeBtn">X</button>
       <h2 class="modal-header">This is your cat!!</h2>
-      <img src="" alt="Enlarged Outfit" id="modalImage">
+      <img src="" alt="" id="modalImage">
 
       <!-- music player -->
       <div class="music-player" id="musicPlayer">
         <div class="music-player-title">Windows Media Player</div>
-        <div class="music-player-trackname" id="playerTrackName">No Track</div>
+        <div class="music-player-trackname" id="playerTrackName">meow!</div>
       </div>
     </div>
   </div>
 
   <script>
     // modal script
+    let musicEnabled = false;
+    let currentAudio = null; 
+    const toggleMusicBtn = document.getElementById('toggleMusicBtn');
+    const playerTrackName = document.getElementById('playerTrackName');
     const outfitItems = document.querySelectorAll('.outfit-item');
     const modalOverlay = document.getElementById('modalOverlay');
     const modal = document.getElementById('modal');
     const modalImage = document.getElementById('modalImage');
     const closeBtn = document.getElementById('closeBtn');
 
-    // show modal when outfit item is clicked
-    outfitItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const largerImgPath = item.getAttribute('data-larger');
-        modalImage.src = largerImgPath; 
-        modalOverlay.style.display = 'flex'; 
-      });
-    });
+    const catAltTexts = {
+    "images/catmeme1.png": "an orange and white striped cat looking very happy and hopeful. blushing with hand emojis. looks like it wants something from you...",
+    "images/catmeme2.png": "a cool swag cat with white fur and orange pattern on top of it's head sitting in a box with sunglasses on. you've never heard of a cat with such drip before",
+    "images/catmeme3.png": "a gray tabby cat looking off into the distance with black rimmed glasses on. he seems to know a lot about the world...",
+    "images/catmeme4.png": "a tiny flabbergasted black cat that you can only make out is a cat because of its abstract shape. otherwise its a black void, with shocked glowing eyes and stiff in the air",
+    "images/catmeme5.png": "a beautiful white cat with blue eyes, with a matching blue background and star stickers. a beautiful backdrop for a beautiful cat.",
+    "images/catmeme6.png": "a sigma cat mewing with a raised eyebrow. white fur, pink nose, looksmaxxing 100%"
+  };
 
-    // close modal
-    closeBtn.addEventListener('click', () => {
-      modalOverlay.style.display = 'none';
-      modalImage.src = ''; // clear the modal image
+  outfitItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const largerImgPath = item.getAttribute('data-larger');
+      modalImage.src = largerImgPath;
+      modalImage.alt = catAltTexts[largerImgPath];
+      modalOverlay.style.display = 'flex';
     });
+  });
 
-    // clicking anywhere outside modal
-    window.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) {
-        modalOverlay.style.display = 'none';
-        modalImage.src = '';
-      }
-    });
+    toggleMusicBtn.addEventListener('click', () => {
+    if (!musicEnabled) {
+      musicEnabled = true;
+      toggleMusicBtn.textContent = `Toggle Music: ON`;
+      toggleMusicBtn.disabled = true;
+      loadMusic();
+    }
+  });
+
+    // function for music when toggled ON
+    function loadMusic() {
+      document.querySelectorAll('.outfit-item').forEach((item, index) => {
+        if (!item.querySelector('audio')) {
+          const audio = document.createElement('audio');
+          audio.src = `./songs/music${index + 1}.m4a`;
+          item.appendChild(audio);
+
 
     // global audio reffs
-    let currentAudio = null;  // which audio is currently playing?
+    let currentAudio = null; 
     const playerTrackName = document.getElementById('playerTrackName');
+
+    //preload audio OR treat them as objects ready to go
+    // don't load dynamically
 
     // music + notes
     outfitItems.forEach((item, index) => {
       // <audio> element for each outfit 
       const audio = document.createElement('audio');
-      audio.src = `./songs/music${index+1}.mp3`; 
+      audio.src = `./songs/music${index+1}.m4a`; 
       item.appendChild(audio);
 
       // container for music notes
@@ -350,17 +181,52 @@
         // make sure same audio continues
         currentAudio = audio;
         audio.play();
-        playerTrackName.textContent = `music${index+1}`;
       });
     });
 
-    // When modal closes -> pause/stop currently playing track
+    // when modal closes -> pause/stop currently playing track
     closeBtn.addEventListener('click', () => {
       if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
       }
     });
+        }
+      });
+    }
+
+    // function: stop all music when toggled OFF
+    function stopAllMusic() {
+      document.querySelectorAll('audio').forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.remove();
+      });
+    }
+
+    // show modal when outfit item is clicked
+    outfitItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const largerImgPath = item.getAttribute('data-larger');
+        modalImage.src = largerImgPath; 
+        modalOverlay.style.display = 'flex'; 
+      });
+    });
+
+    // close modal
+    closeBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+      modalImage.src = ''; 
+    });
+
+    // clicking anywhere outside modal
+    window.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+        modalImage.src = '';
+      }
+    });
+
   </script>
 </body>
 </html>
