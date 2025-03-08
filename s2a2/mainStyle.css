@@ -21,6 +21,16 @@ body {
     box-shadow: 3px 3px 0 #777; 
 }
 
+button:focus {
+    outline: 2px solid #005a9e; 
+    outline-offset: 2px;
+}
+
+button:active {
+    background-color: #bbb;
+    transform: scale(0.95);
+}
+
 /* title */
 .title-bar {
     display: flex;
@@ -97,6 +107,10 @@ h1 {
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.7); 
 }
 
+.outfit-item:focus-within {
+    outline: 3px solid yellow; 
+}
+
  /* toggle music on / off */
  .toggle-music-container {
     margin: 15px 0;
@@ -113,6 +127,14 @@ h1 {
   .toggle-music:hover {
     background: #bbb;
   }
+  .toggle-music:focus {
+    outline: 2px solid #005a9e;
+}
+
+.toggle-music:active {
+    background-color: #aaa;
+    transform: scale(0.98);
+}
   .warning-text {
     font-size: 12px;
     color: darkred;
@@ -171,6 +193,14 @@ h1 {
     text-align: center;
 }
 
+.modal .close-btn:focus {
+    outline: 2px solid darkred;
+}
+
+.modal .close-btn:active {
+    background-color: #888;
+}
+
 /* windows music player */
 .music-player {
     background-color: #ccc;
@@ -192,6 +222,15 @@ h1 {
     margin-top: 3px;
     font-size: 14px;
     color: #222;
+}
+
+.music-player-trackname:focus {
+    outline: 2px dashed #222;
+    background-color: yellow;
+}
+
+.music-player-trackname:active {
+    background-color: orange;
 }
 
 /* music notes */
@@ -228,4 +267,56 @@ h1 {
     0%   { transform: translateY(0);   opacity: 1; }
     70%  { opacity: 1; }
     100% { transform: translateY(-30px); opacity: 0; }
+}
+
+
+/* for msmaller screens */
+@media (max-width: 1024px) {
+    .window {
+        width: 70vw;
+    }
+    .title-bar-text {
+        font-size: 2vmin;
+    }
+    .outfit-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* for tablet */
+@media (max-width: 768px) {
+    .window {
+        width: 80vw;
+    }
+    .title-bar {
+        padding: 1vh;
+    }
+    .outfit-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .toggle-music {
+        font-size: 2vmin;
+        padding: 1.5vh 3vw;
+    }
+}
+
+/* for mobile */
+@media (max-width: 480px) {
+    .window {
+        width: 90vw;
+    }
+    .title-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .outfit-grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+    .toggle-music {
+        font-size: 2.5vmin;
+        padding: 2vh 5vw;
+    }
+    .modal {
+        width: 90vw;
+    }
 }
