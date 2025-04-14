@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timmy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      background: radial-gradient(circle at center, #444, #000);
+    }
+
+    .hero img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+
+    .glow-text {
+      font-size: 2.5rem;
+      text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+      margin-bottom: 20px;
+    }
+
+    .subtext {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .transition {
+      background: linear-gradient(to right, #ff00cc, #3333ff);
+      color: white;
+      text-shadow: 0 0 4px rgba(0,0,0,0.6);
+    }
+
+    .cta {
+      background: #111;
+      padding: 80px 20px;
+      box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+
+    .button {
+      background: #00ffff;
+      color: #000;
+      padding: 15px 40px;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #00ffff;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ffff;
+    }
+
+    .reviews {
+      background: #1c1c1c;
+      padding: 60px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1 class="glow-text">This is Timmy.</h1>
+    <img src="timmy.png" alt="sad Timmy with papers falling out of backpack">
+    <p class="subtext">He’s drowning in deadlines, double-booked, and forgot about the reading due today.</p>
+  </section>
+
+  <section>
+    <h2 class="glow-text">Google Calendar shows him what’s coming.<br>But not what to do.</h2>
+    <p class="subtext">Appointments don't help Timmy focus. He needs checkboxes.</p>
+  </section>
+
+  <section class="transition">
+    <h2 class="glow-text">Then Timmy found a better way.</h2>
+    <p class="subtext">An app that turns events into tasks — automatically.</p>
+  </section>
+
+  <section>
+    <h2 class="glow-text">Less remembering. More doing.</h2>
+    <p class="subtext">Timmy's calendar now syncs with TickTick. Every event becomes a task, complete with due times and reminders.</p>
+  </section>
+
+  <section class="cta">
+    <h2 class="glow-text">Meet your new favorite study buddy.</h2>
+    <p class="subtext">Start syncing. Save your brain for the hard stuff.</p>
+    <a href="#" class="button">Download Now</a>
+  </section>
+
+  <section class="reviews">
+    <h2 class="glow-text">Loved by students everywhere</h2>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      "I stopped missing things because I stopped managing two apps." – a Timmy, probably
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      “This is the best thing in my life that I have ever used” - Gray
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      "Life-changing" - Angie
+    </div>
+  </section>
+
+</body>
+</html>
