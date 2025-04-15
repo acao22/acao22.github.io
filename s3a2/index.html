@@ -19,14 +19,26 @@
       text-align: center;
     }
 
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p{
+      font-size: 1.2rem;
+    }
+
     .hero {
-      background: radial-gradient(circle at center, #444, #000);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+       url("./study-bg.png") no-repeat center top;
+      background-size: cover;
+      padding: 130px 30px;
     }
 
     .hero img {
-      max-width: 300px;
+      max-width: 400px;
       border-radius: 10px;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      background: radial-gradient(circle at center, #00ffff, transparent 80%);
     }
 
     .glow-text {
@@ -35,12 +47,19 @@
       margin-bottom: 20px;
     }
 
+    .glow-text-red {
+      font-size: 2.5rem;
+      text-shadow: 0 0 8px #ff0000, 0 0 16px #ff0000;
+      margin-bottom: 20px;
+    }
+
     .subtext {
       font-size: 1.2rem;
       color: #ccc;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 30px auto 30px;
     }
+    
 
     .transition {
       background: linear-gradient(to right, #ff00cc, #3333ff);
@@ -63,6 +82,7 @@
       font-size: 1.1rem;
       box-shadow: 0 0 15px #00ffff;
       transition: transform 0.2s ease;
+      margin-top: 20px;
     }
 
     .button:hover {
@@ -74,6 +94,77 @@
       background: #1c1c1c;
       padding: 60px 20px;
     }
+
+    .review {
+      padding: 10px;
+    }
+
+    footer {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    @keyframes distort {
+      0% { filter: blur(0px);}
+      50% { filter: blur(1.5px);}
+      100% { filter: blur(0px);}
+    }
+
+    .drowning {
+      animation: wave 1s infinite ease-in-out, distort 1.8s infinite ease-in-out;
+      color: #80ffff;
+    }
+
+    @keyframes tilt-1 {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .booked-1 {
+      display: inline-block;
+      animation: tilt-1 1.5s infinite ease-in-out, pulse 1.4s infinite;
+      transform-origin: left bottom;
+      color: #ff80b3;
+    }
+
+    @keyframes tilt-2 {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(4deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .booked-2 {
+      display: inline-block;
+      animation: tilt-2 1.5s infinite ease-in-out, pulse 1.4s infinite;
+      transform-origin: right bottom;
+      color: #ff80b3;
+    }
+
+    @keyframes blink {
+      0%, 49%, 65%,  100% { opacity: 1; }
+      3%, 55%, 95% { opacity: 0.5; }
+      50%, 99% { opacity: 0; }
+    }
+
+    .forgot {
+      display: inline-block;
+      animation: blink 1.2s step-start infinite, spin 4s linear infinite;
+      color: #ffd280;
+    }
+
+    .gray-to-black {
+      background: linear-gradient(to bottom, black, #1f1f1f);
+    }
   </style>
 </head>
 <body>
@@ -81,17 +172,21 @@
   <section class="hero">
     <h1 class="glow-text">This is Timmy.</h1>
     <img src="timmy.png" alt="sad Timmy with papers falling out of backpack">
-    <p class="subtext">He’s drowning in deadlines, double-booked, and forgot about the reading due today.</p>
+    <p class="subtext">He’s 
+      <span class="drowning">drowning in deadlines</span>, 
+      <span class="booked-1">double</span>-<span class="booked-2">booked</span>, and 
+      <span class="forgot">forgot about the reading</span> due today.
+    </p>
   </section>
 
-  <section>
-    <h2 class="glow-text">Google Calendar shows him what’s coming.<br>But not what to do.</h2>
+  <section class="gray-to-black">
+    <h2 class="glow-text">Google Calendar shows him what’s coming.<br><span class="glow-text-red">But not what to do.</span></h2>
     <p class="subtext">Appointments don't help Timmy focus. He needs checkboxes.</p>
   </section>
 
   <section class="transition">
-    <h2 class="glow-text">Then Timmy found a better way.</h2>
-    <p class="subtext">An app that turns events into tasks — automatically.</p>
+    <h2>Then Timmy found a better way.</h2>
+    <p>An app that turns events into tasks — automatically.</p>
   </section>
 
   <section>
@@ -120,6 +215,11 @@
       "Life-changing" - Angie
     </div>
   </section>
+  <footer>
+    <p >© 2023 TickTick Inc. All rights reserved.</p>
+    <p>Privacy Policy | Terms of Service</p>
+    <p>Follow us on <a href="#" style="color: #00ffff;">Twitter</a> | <a href="#" style="color: #00ffff;">Instagram</a></p>
+  </footer>
 
 </body>
 </html>
