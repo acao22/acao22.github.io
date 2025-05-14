@@ -55,13 +55,13 @@ body {
 }
 
 
-/* Moves left then right smoothly */
+/* moves left -> right */
 @keyframes scrollX {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Moves right then left smoothly */
+/* moves right <- left */
 @keyframes scrollY {
   0% { transform: translateX(0); }
   100% { transform: translateX(50%); }
