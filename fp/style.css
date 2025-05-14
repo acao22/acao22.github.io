@@ -1,0 +1,98 @@
+/* Base reset and font */
+body {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  background-image: url("background/background.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Header title */
+.header {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  padding-top: 30px;
+}
+
+/* Center image area */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for the illustration and objects */
+.desk-container {
+  position: relative;
+  width: 700px; /* Adjust to your drawing’s width */
+}
+
+/* Main illustration */
+.desk-base {
+  width: 100%;
+  display: block;
+}
+
+/* Interactive objects (hoverable, clickable) */
+.object {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.object:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 30px;
+  font-family: "Times New Roman", serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  background-color: #fdf6e3; /* soft tan paper look */
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e4d9c3;
+}
+
+.object {
+  position: absolute;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.object img {
+  width: auto;
+  height: auto;
+  pointer-events: none; 
+}
+
+.object .label {
+  font-size: 12px;
+  color: red;
+  font-family: "Times New Roman", serif;
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect */
+.object:hover {
+  transform: scale(1.15);
+  /* box-shadow: 0 0 10px 4px red; */
+}
+
+.object:hover .label {
+  opacity: 1;
+}
