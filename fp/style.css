@@ -1,4 +1,4 @@
-/* Base reset and font */
+/* bese reset and font */
 body {
   margin: 0;
   font-family: "Times New Roman", serif;
@@ -7,7 +7,7 @@ body {
   background-repeat: repeat;
 }
 
-/* Header title */
+
 .header {
   text-align: center;
   font-size: 48px;
@@ -16,26 +16,24 @@ body {
   padding-top: 30px;
 }
 
-/* Center image area */
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Container for the illustration and objects */
 .desk-container {
   position: relative;
-  width: 700px; /* Adjust to your drawing’s width */
+  width: 700px; 
 }
 
-/* Main illustration */
+/* main desk */
 .desk-base {
   width: 100%;
   display: block;
 }
 
-/* Interactive objects (hoverable, clickable) */
+/*move & click*/
 .object {
   position: absolute;
   transition: transform 0.3s ease;
@@ -56,7 +54,7 @@ body {
   border: 2px solid black;
   padding: 6px 12px;
   border-radius: 5px;
-  background-color: #fdf6e3; /* soft tan paper look */
+  background-color: #fdf6e3; 
   transition: background-color 0.3s ease;
 }
 
@@ -70,6 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 }
 
 .object img {
@@ -87,12 +86,37 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* Hover effect */
+/* hover effect */
 .object:hover {
   transform: scale(1.15);
   /* box-shadow: 0 0 10px 4px red; */
 }
 
 .object:hover .label {
+  opacity: 1;
+}
+
+/* tooltip styles */
+.object .tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff8f8;
+  color: red;
+  font-size: 12px;
+  font-family: "Times New Roman", serif;
+  padding: 4px 8px;
+  border: 1px solid red;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* tooltip on hover */
+.object:hover .tooltip {
   opacity: 1;
 }
