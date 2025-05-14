@@ -1,0 +1,74 @@
+/* Base reset and font */
+body {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  background-image: url("background/background.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Header title */
+.header {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  padding-top: 30px;
+}
+
+.flowing-text-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.flowing-text-left {
+  display: inline-block;
+  animation: scrollX 12s ease-in-out infinite alternate;
+}
+
+.flowing-text-left p {
+  font-size: 12px;
+  font-family: "Times New Roman", serif;
+  line-height: 1.5;
+  background: linear-gradient(90deg, green, blue, violet);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShift 6s linear infinite;
+}
+
+.flowing-text-right {
+  display: inline-block;
+  animation: scrollY 12s ease-in-out infinite alternate;
+}
+
+.flowing-text-right p {
+  font-size: 12px;
+  font-family: "Times New Roman", serif;
+  line-height: 1.5;
+  background: linear-gradient(90deg, red, orange, yellow, green);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShift 6s linear infinite;
+}
+
+
+/* Moves left then right smoothly */
+@keyframes scrollX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Moves right then left smoothly */
+@keyframes scrollY {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
